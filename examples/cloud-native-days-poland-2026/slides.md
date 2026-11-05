@@ -3,16 +3,16 @@ marp: true
 theme: flatcar
 paginate: true
 size: 16:9
-title: "Flatcar Linux: Provisioned, Not Installed"
+title: "Operating Systems as Code: The Missing Layer in Cloud Native Platforms"
 author: Jan Bronicki
 ---
 
 <!-- _class: cover -->
 <!-- _paginate: false -->
 
-# Flatcar Linux: Provisioned, Not Installed
+# Operating Systems as Code: The Missing Layer in Cloud Native Platforms
 
-## A declarative and Immutable Operating Systems for Containers and Kubernetes
+## Cloud Native Days Poland 2026
 
 ##### Jan Bronicki
 
@@ -24,7 +24,7 @@ author: Jan Bronicki
 
 <div class="pin-tr" style="display: flex; gap: 20px; align-items: center">
   <img class="img-h-xs" src="./assets/logos/external/flatcar-logo-other.png" alt="Flatcar">
-  <img class="img-h-xs" src="./assets/logos/external/microsoft.png" alt="Microsoft">
+  <img class="img-h-xs" src="./assets/logos/external/microsoft-logo.svg" alt="Microsoft">
 </div>
 
 
@@ -32,9 +32,10 @@ author: Jan Bronicki
 
 Flatcar Maintainer
 
-Software Engineer @ Microsoft
+Software Engineer at Microsoft
+<img class="bio-photo" style="--bio-photo-size: 320px; top: 180px" src="assets/photo/individual_photos/jan-bronicki.jpeg" alt="Jan Bronicki">
 
-<img class="bio-photo" style="--bio-photo-size: 320px; top: 180px" src="assets/photo/individual_photos/jan-bronicki.jpg" alt="Jan Bronicki">
+<p class="bio-github" style="bottom: 100px"><img src="assets/logos/external/linkedin-white.svg" alt="LinkedIn">jan-bronicki</p>
 
 <p class="bio-github"><img src="assets/logos/external/github-white.png" alt="GitHub">@John15321</p>
 
@@ -45,10 +46,11 @@ Software Engineer @ Microsoft
 # Agenda
 
 - The community behind Flatcar
-- What Flatcar Container Linux actually is
+- What problem do we solve?
+- Operating Systems as Code
 - Provisioned, not installed
 - Immutable by design & A/B updates
-- Live demo
+- Release channels
 
 ---
 
@@ -170,9 +172,40 @@ Software Engineer @ Microsoft
 
 <!-- _class: section -->
 
-# How Flatcar Works
+# What Problem Do We Solve?
 
-## What is it, and how do you use it?
+## Why the OS is still the odd one out
+
+---
+
+<!-- _class: sidebar -->
+
+# Everything is code. Almost.
+
+<div class="cols-2" style="align-items: start; gap: 40px; margin-top: 12px">
+
+<div>
+
+**Already declarative**
+
+- Dockerfiles
+- Kubernetes manifests, Helm charts
+- GitOps workflows
+- CI/CD pipelines
+
+</div>
+
+<div>
+
+**Still treated differently**
+
+- Host OS installed interactively
+- Changed over time
+- Repaired manually when it breaks
+
+</div>
+
+</div>
 
 ---
 
@@ -216,9 +249,9 @@ Software Engineer @ Microsoft
 
 <!-- _class: lead -->
 
-# You don't install Flatcar.
+# Operating Systems as Code
 
-## You provision it.
+## A versioned, declarative artifact. Provisioned, not installed.
 
 ---
 
@@ -246,7 +279,7 @@ Software Engineer @ Microsoft
 - One declarative config, applied at boot
 - Every machine identical, reproducible
 - Whole-OS atomic updates, no drift
-- Same idea as containers
+- Same idea as containers, with the config in Git
 
 </div>
 
@@ -257,6 +290,12 @@ Software Engineer @ Microsoft
 # Flatcar Workflow
 
 <img style="display: block; margin: auto; max-width: 100%; max-height: 60%; object-fit: contain" src="assets/diagrams/flatcar-workflow.svg" alt="Flatcar workflow: Butane YAML provisions Cloud, VM, or Bare Metal running Containers">
+
+---
+
+# The Container Philosophy, for the OS
+
+<img style="display: block; margin: auto; height: 540px; max-width: 100%; object-fit: contain" src="assets/diagrams/os-vs-container.svg" alt="Containers: Dockerfile, image, container, new tag. Operating system: Butane, Flatcar image, node, new OS release">
 
 ---
 
@@ -324,6 +363,17 @@ No login. No post-boot setup. The machine came up already doing its job.
 - **No package updates**: the entire OS updates as one unit.
 - Same config + same base image = **identical machine every time**.
 - **sysexts** for optional add-ons.
+
+---
+
+# What is Immutable?
+
+<img style="display: block; margin: 0 auto; height: 540px; max-width: 100%; object-fit: contain" src="assets/diagrams/immutable-layers.svg" alt="Block diagram: writable workloads, config and data on top of the read-only, dm-verity protected OS image, sysexts and boot layer">
+
+<div class="pin-br" style="display: flex; gap: 6px; bottom: 22px; right: 80px; font-size: 13px; font-weight: 700">
+  <span style="border: 2px dashed #12172B; border-radius: 4px; padding: 2px 10px; background: #fff; color: #12172B">Writable: yours</span>
+  <span style="border: 2px solid #12172B; border-radius: 4px; padding: 2px 10px; background: #09BAC8; color: #12172B">Read-only: Flatcar's</span>
+</div>
 
 ---
 
@@ -400,14 +450,6 @@ Every commit runs the full test suite: unit, integration, and product tests acro
 
 ---
 
-<!-- _class: lead -->
-
-# Demos!
-
-## github.com/John15321/demos
-
----
-
 <!-- _class: closing -->
 <!-- _paginate: false -->
 
@@ -422,8 +464,8 @@ Every commit runs the full test suite: unit, integration, and product tests acro
 </p>
 
 <p class="closing-meetings">
-  <span><strong>Office hours</strong> · every 2nd Tue, 16:30 CEST</span>
-  <span><strong>Dev sync</strong> · every 4th Tue, 16:30 CEST</span>
+  <span><strong>Office hours</strong> · every 2nd Thu, 16:30 CEST</span>
+  <span><strong>Dev sync</strong> · every 4th Thu, 16:30 CEST</span>
 </p>
 
 <p class="closing-cta"><strong>Everyone welcome.</strong> Users, contributors, or just curious. Ask questions, get help, share what you're building!</p>

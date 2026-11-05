@@ -2,10 +2,10 @@
 
 {{ cookiecutter.project_short_description }}
 
-A skeleton deck ships in [`slides.md`](slides.md) — cover, whoami, agenda, one
-section divider, one content slide, and a closing slide. Fill in your own
-content in `slides.md`, then `make build` writes the PDF to
-`build/slides.pdf`.
+A complete Flatcar deck ships in [`slides.md`](slides.md): cover, whoami,
+agenda, community, the problem Flatcar solves, operating systems as code,
+immutability, A/B updates, and a closing slide. Edit it to fit your talk, then
+`make build` writes the PDF to `build/slides.pdf`.
 
 ## Build
 
@@ -31,6 +31,9 @@ Author-time preview with live reload:
 make watch        # rebuilds on save
 make preview      # live browser preview
 ```
+
+`make pptx-auto` converts the deck to an editable PowerPoint at
+`build/slides-auto.pptx` (experimental, needs LibreOffice; expect small glitches).
 
 See `make help` for the full target list.
 

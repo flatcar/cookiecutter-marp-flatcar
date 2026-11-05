@@ -1,11 +1,11 @@
-# Flatcar theme — authoring manual
+# Flatcar theme: authoring manual
 
 Reference for the utility classes and markdown conventions provided by
 the Flatcar Marp theme. For build/setup, see [README.md](README.md).
 
 ## Contents
 
-- [Flatcar theme — authoring manual](#flatcar-theme--authoring-manual)
+- [Flatcar theme: authoring manual](#flatcar-theme-authoring-manual)
   - [Contents](#contents)
   - [Slide layouts](#slide-layouts)
   - [Utility classes](#utility-classes)
@@ -55,10 +55,10 @@ pane pins only).
 Two equivalent ways to apply them:
 
 ```markdown
-<!-- HTML class syntax — works on any element -->
+<!-- HTML class syntax, works on any element -->
 <img class="img-md pin-br" src="assets/logo.png">
 
-<!-- Markdown alt-text syntax — works on <img> only -->
+<!-- Markdown alt-text syntax, works on <img> only -->
 ![img-md pin-br](assets/logo.png)
 ```
 
@@ -90,7 +90,7 @@ Variants: default grey, `badge-cyan`, `badge-navy`, `badge-muted`.
 
 Three families of size tokens. All work as classes or alt-text.
 
-**Widths** — set width, height auto-scales.
+**Widths**: set width, height auto-scales.
 
 | Token       | Width  |
 | ----------- | ------ |
@@ -102,7 +102,7 @@ Three families of size tokens. All work as classes or alt-text.
 | `img-xl`    | 720px  |
 | `img-full`  | 100%   |
 
-**Heights** — set height, width auto-scales. Useful when a row of
+**Heights**: set height, width auto-scales. Useful when a row of
 differently-shaped logos should share one visual height.
 
 | Token       | Height |
@@ -112,7 +112,7 @@ differently-shaped logos should share one visual height.
 | `img-h-md`  | 200px  |
 | `img-h-lg`  | 320px  |
 
-**Squares** — set both dimensions equal, with `object-fit: cover` so
+**Squares**: set both dimensions equal, with `object-fit: cover` so
 portraits and avatars crop cleanly instead of stretching.
 
 | Token        | Size      |
@@ -164,7 +164,7 @@ row. Works on any slide layout.
 ```
 
 Caveat: on default (unclassed) slides the top edge is covered by the navy
-title bar — prefer `pin-tr` / `pin-tl` on dark layouts (`cover`, `lead`,
+title bar, prefer `pin-tr` / `pin-tl` on dark layouts (`cover`, `lead`,
 `section`, `closing`) instead.
 
 ### Pane pins (`pane-*`, sidebar/agenda only)
@@ -182,7 +182,7 @@ rail. Uses a `--rail-width` custom property (33% for `sidebar`, 25% for
 | **bottom** (60px) | `pane-bl`  | `pane-bc`  | `pane-br`  |
 
 - **Corner / row variants** (`-l` and `-r`) keep the element at its
-  intrinsic size — combine with `img-sm`/`img-md` for logos.
+  intrinsic size, combine with `img-sm`/`img-md` for logos.
 - **Center variants** (`-c`) span the full pane width and auto-fit
   images (max-height 220px). Leave off `img-*` sizing.
 
@@ -229,7 +229,7 @@ consistently against the white slide.
 | `logo-wall-lg` | 210px           |
 | `logo-wall-sm` | 60px            |
 
-Column count is not baked in — set it inline (or via a `<style scoped>`
+Column count is not baked in, set it inline (or via a `<style scoped>`
 block) so the same rules serve 2/3/4-up walls:
 
 ```markdown
@@ -246,7 +246,7 @@ block) so the same rules serve 2/3/4-up walls:
 ```markdown
 <div class="callout">
 
-**Note:** Flatcar is immutable — no `apt install`.
+**Note:** Flatcar is immutable, no `apt install`.
 
 </div>
 ```
@@ -265,7 +265,7 @@ re-renders every `.d2` before running Marp when the `d2` CLI is on
 and fresh checkouts still work without `d2` installed.
 
 Dropping a diagram onto a slide is just an `<img>` pointing at the
-generated SVG — Marp doesn't need to know it came from D2:
+generated SVG, Marp doesn't need to know it came from D2:
 
 ```markdown
 <img src="assets/diagrams/flatcar-workflow.svg" alt="Flatcar workflow">
@@ -284,7 +284,7 @@ or the one-liner from [d2lang.com](https://d2lang.com/tour/install).
 
 The shipped diagrams (`flatcar-ux-flow.d2`, `ab-updates.d2`) use the
 Flatcar palette (`#12172B` navy, `#09BAC8` cyan) via a shared
-`classes:` block near the top of each file — copy that pattern for
+`classes:` block near the top of each file, copy that pattern for
 new diagrams to stay on-brand.
 
 **Other diagram tools are fine but unsupported here.** If you prefer
@@ -305,18 +305,18 @@ out of the box:
 The theme uses a **32px body default**, with each special layout setting
 its own hero/title sizes. Sizes are hard-coded per rule (no CSS
 variable) so bumping the default in `base.css` only affects layouts that
-inherit — layouts with their own explicit rules stay put.
+inherit, layouts with their own explicit rules stay put.
 
 Where the sizes live:
 
 | Element                         | Size | File                                         |
 | ------------------------------- | ---- | -------------------------------------------- |
-| Slide body (default + sidebar)  | 32px | `base.css` — `section`                       |
-| `h1` navy title bar             | 40px | `base.css` — `section h1`                    |
-| `h2` subheading                 | 32px | `base.css` — `section h2`                    |
-| `code` inline pill              | 0.9em | `base.css` — `code`                         |
+| Slide body (default + sidebar)  | 32px | `base.css`: `section`                       |
+| `h1` navy title bar             | 40px | `base.css`: `section h1`                    |
+| `h2` subheading                 | 32px | `base.css`: `section h2`                    |
+| `code` inline pill              | 0.9em | `base.css`: `code`                         |
 | Slide number `::after`          | 14px | `base.css`                                   |
-| Sidebar `h1` cyan title         | 44px | `sidebar.css` — `section.sidebar h1`         |
+| Sidebar `h1` cyan title         | 44px | `sidebar.css`: `section.sidebar h1`         |
 | Sidebar `h2`                    | 28px | `sidebar.css`                                |
 | Sidebar table th/td             | 24px | `sidebar.css`                                |
 | Agenda `h1` "Agenda"            | 56px | `sidebar.css`                                |
@@ -328,7 +328,7 @@ Where the sizes live:
 
 Three ways to override sizing from Markdown:
 
-**1. `<style scoped>` — one whole slide**
+**1. `<style scoped>`: one whole slide**
 
 Marp lets you drop a `<style scoped>` block inside a slide; the CSS
 applies only to that slide.
@@ -349,7 +349,7 @@ applies only to that slide.
 - Another bigger bullet
 ```
 
-**2. Inline `style=""` on an element — one piece of text**
+**2. Inline `style=""` on an element: one piece of text**
 
 ```markdown
 - <span style="font-size: 44px; font-weight: 600">This bullet pops</span>
@@ -361,7 +361,7 @@ applies only to that slide.
 Inline styles beat almost any theme rule on specificity, so this is the
 "just make it work" escape hatch.
 
-**3. The `.small` and `.big` utility classes — relative bumps**
+**3. The `.small` and `.big` utility classes: relative bumps**
 
 ```markdown
 - <span class="big">1.4× the surrounding size</span>
@@ -394,7 +394,7 @@ So both of these render identically:
 ```
 
 Because `[alt~="…"]` is a word match, extra tokens become real,
-accessible alt text — the best of both worlds:
+accessible alt text, the best of both worlds:
 
 ```markdown
 ![pane-bc CNCF Incubating banner](assets/logos/external/cncf-banner.png)
@@ -424,7 +424,7 @@ an `img[alt~="foo"]` selector to the rule:
 .my-thing, img[alt~="my-thing"] { … }
 ```
 
-That's the entire trick — no build step, no plugin, just CSS.
+That's the entire trick, no build step, no plugin, just CSS.
 
 If you invent a new positional token (e.g. `.pin-corner-tr`), remember to
 also add it to the `[class*="pin-"], img[alt*="pin-"]` "hide the wrapping
