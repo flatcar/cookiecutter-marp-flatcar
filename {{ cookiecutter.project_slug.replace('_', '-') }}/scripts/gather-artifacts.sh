@@ -6,7 +6,7 @@ echo "📦 Gathering artifacts..."
 mkdir -p artifacts
 
 if ! ls build/*.pdf > /dev/null 2>&1; then
-    echo "❌ No PDFs found in build/ — run scripts/build.sh first"
+    echo "❌ No PDFs found in build/, run scripts/build.sh first"
     exit 1
 fi
 

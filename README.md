@@ -2,8 +2,8 @@
 
 A cookiecutter template that scaffolds a **single-deck** Flatcar Container Linux
 Marp presentation. One talk = one repo. Generated projects ship with a **full,
-ready-to-give Flatcar 101 talk** — the same deck used at DevOps Days Kraków
-2026 — with your name, photo, and links already wired in. Keep it as-is,
+ready-to-give Flatcar talk**, the same deck used at Cloud Native Days
+Poland 2026, with your name, photo, and links already wired in. Keep it as-is,
 tweak it, or gut it and start over. The theme, layout utilities, asset
 library, and build pipeline come with it.
 
@@ -40,21 +40,23 @@ John Doe placeholder for a quick preview) and drop your own picture in.
 
 ## What you get
 
-A **complete Flatcar 101 deck** with your identity already filled in — ~24
-slides covering the community, what Flatcar is, provisioning with Butane,
-immutability, A/B updates, and channels. Structure:
+A **complete Flatcar deck** with your identity already filled in, 27
+slides covering the community, the problem Flatcar solves, operating systems
+as code, provisioning with Butane, immutability, A/B updates, and channels. Structure:
 
 1. **Cover** — talk title, subtitle, your name
 2. **whoami** — your photo, role, affiliation, GitHub handle
-3. **Agenda** — the five sections below
+3. **Agenda** — the sections below
 4. **Community stewarded** — CNCF governance, upstream partners, cloud
    coverage, production users (logo walls)
-5. **How Flatcar Works** — the flatcar train pun, UX comparison, Butane
-   config, boot-in-a-VM demo, workflow diagram
-6. **Immutable by design & A/B updates** — read-only rootfs, dm-verity,
-   animated A/B slot diagram, release channels
-7. **Demos!** — placeholder pointing at your demos URL
-8. **Closing** — thank-you slide with Flatcar community links + Discord CTA
+5. **What problem do we solve?** — "Everything is code. Almost.", the
+   flatcar train pun, UX comparison
+6. **Operating Systems as Code** — provisioning, containers-vs-OS diagram,
+   Butane config, boot-in-a-VM demo, workflow diagram
+7. **Immutable by design & A/B updates** — read-only rootfs, dm-verity,
+   layer diagram, animated A/B slot diagram, release channels
+8. **Demos!** — placeholder pointing at your demos URL
+9. **Closing** — thank-you slide with Flatcar community links + Discord CTA
 
 Every slide is production-tested content you can keep, edit, or delete.
 All 9 slide layouts (`cover`, `lead`, `section`, `closing`, `agenda`,
@@ -65,25 +67,26 @@ are demonstrated in the deck and documented in
 
 ## Full worked example
 
-The deck this template ships is the same one delivered at DevOps Days
-Kraków 2026 — _"Flatcar Linux: Provisioned, Not Installed"_
-(by Jan Bronicki). A copy of the rendered PDF and source markdown lives
-under [`examples/devops-days-krakow-2026/`](examples/devops-days-krakow-2026/)
+The deck this template ships is based on the one delivered at Cloud Native
+Days Poland 2026, _"Operating Systems as Code: The Missing Layer in Cloud
+Native Platforms"_ (by Jan Bronicki). A copy of the rendered PDF and source
+markdown lives under
+[`examples/cloud-native-days-poland-2026/`](examples/cloud-native-days-poland-2026/)
 so you can preview the finished result on GitHub before generating:
 
-- **[Rendered PDF](examples/devops-days-krakow-2026/slides.pdf)** — the built
+- **[Rendered PDF](examples/cloud-native-days-poland-2026/slides.pdf)** — the built
   output (6.9 MB), viewable directly on GitHub _(but see the download note
   above — GitHub's inline PDF viewer drops some CSS-driven effects;
   download the file for accurate rendering)_
-- **[`slides.md`](examples/devops-days-krakow-2026/slides.md)** — the source
+- **[`slides.md`](examples/cloud-native-days-poland-2026/slides.md)** — the source
 
 The full project (assets, themes, Makefile, CI) lives in its own repo:
-[**John15321/devops-days-krakow-2026**](https://github.com/John15321/devops-days-krakow-2026).
+[**John15321/cloud-native-days-poland-2026**](https://github.com/John15321/cloud-native-days-poland-2026).
 
 ## What's inside
 
-- `slides.md` at the repo root — a full Flatcar 101 talk (cover, whoami,
-  agenda, community, how-it-works, immutability + A/B updates, demos,
+- `slides.md` at the repo root — a full Flatcar talk (cover, whoami,
+  agenda, community, problem, OS as code, immutability + A/B updates, demos,
   closing) with your maintainer photo, name, and links already wired in
 - `themes/flatcar.css` + `themes/flatcar/{base,dark,sidebar}.css` — the Flatcar
   theme with 9 slide layouts + utility classes (`img-*`, `pin-*`, `pane-*`,
@@ -120,7 +123,7 @@ guide](https://cookiecutter.readthedocs.io/en/latest/installation.html).
 ### 2. Generate your talk
 
 ```bash
-cookiecutter gh:John15321/cookiecutter-marp-flatcar
+cookiecutter gh:flatcar/cookiecutter-marp-flatcar
 cd <your-project-slug>
 make setup        # one-time container image build (Podman or Docker)
 make build        # → build/slides.pdf
@@ -139,6 +142,7 @@ your project under `./<project_slug>/`.
 | `author_full_name`          | Speaker name (frontmatter + cover + whoami + README footer)                                   |
 | `author_email`              | `package.json` author email                                                                   |
 | `author_github_handle`      | GitHub handle rendered on the whoami slide                                                    |
+| `author_linkedin_handle`    | Optional LinkedIn handle on the whoami slide (empty hides the line)                           |
 | `author_role`               | First bio line on the whoami slide (e.g. "Flatcar Maintainer")                                |
 | `author_affiliation`        | Second bio line on the whoami slide (e.g. "Software Engineer @ …")                            |
 | `project_full_name`         | Human-readable talk name (README h1)                                                          |

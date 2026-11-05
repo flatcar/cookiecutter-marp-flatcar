@@ -2,10 +2,10 @@
 
 {{ cookiecutter.project_short_description }}
 
-A skeleton deck ships in [`slides.md`](slides.md) — cover, whoami, agenda, one
-section divider, one content slide, and a closing slide. Fill in your own
-content in `slides.md`, then `make build` writes the PDF to
-`build/slides.pdf`.
+A complete Flatcar deck ships in [`slides.md`](slides.md): cover, whoami,
+agenda, community, the problem Flatcar solves, operating systems as code,
+immutability, A/B updates, and a closing slide. Edit it to fit your talk, then
+`make build` writes the PDF to `build/slides.pdf`.
 
 ## Build
 
@@ -77,4 +77,4 @@ Pushing a tag `v*` triggers the CI workflow to attach `slides.pdf` to a GitHub R
 
 ---
 
-Generated from [cookiecutter-marp-flatcar](https://github.com/John15321/cookiecutter-marp-flatcar) by **{{ cookiecutter.author_full_name }}**.
+Generated from [cookiecutter-marp-flatcar](https://github.com/flatcar/cookiecutter-marp-flatcar) by **{{ cookiecutter.author_full_name }}**.

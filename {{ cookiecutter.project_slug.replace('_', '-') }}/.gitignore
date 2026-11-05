@@ -23,3 +23,5 @@ npm-debug.log*
 # Full-resolution image backups (kept locally, out of git)
 assets/photo/group_photos/original/
 assets/logos/external/other/original/
+
+# Auto-converted PowerPoint

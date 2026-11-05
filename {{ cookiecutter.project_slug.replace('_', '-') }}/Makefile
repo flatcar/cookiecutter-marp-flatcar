@@ -1,4 +1,4 @@
-# Makefile for Marp Slides — works with Podman (preferred) or Docker.
+# Makefile for Marp Slides, works with Podman (preferred) or Docker.
 
 .PHONY: all build clean artifacts help test ci-build ci-artifacts setup \
         native-build native-clean native-artifacts watch preview shell \
@@ -118,7 +118,7 @@ nuke:
 	@-$(ENGINE) rmi -f slides-builder:local localhost/slides-builder:local 2> /dev/null || true
 	@echo "✅ Container environment removed. Run 'make setup' to recreate."
 
-# Native (non-container) builds — require Node.js + npm on the host.
+# Native (non-container) builds, require Node.js + npm on the host.
 native-build:
 	@echo "📑 Building Marp slides (native)..."
 	@$(SCRIPTS_DIR)/build.sh
@@ -131,7 +131,7 @@ native-artifacts: native-build
 	@echo "📦 Gathering artifacts (native)..."
 	@$(SCRIPTS_DIR)/gather-artifacts.sh
 
-# Authoring helpers — always native (need interactive Node + browser).
+# Authoring helpers, always native (need interactive Node + browser).
 watch:
 	@npm run watch
 

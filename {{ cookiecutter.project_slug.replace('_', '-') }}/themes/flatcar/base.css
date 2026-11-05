@@ -2,7 +2,7 @@
  *
  * Palette + default content slide (white background, navy title bar
  * with Flatcar logo, body text). Imported by the main `flatcar`
- * theme — not intended to be used standalone.
+ * theme, not intended to be used standalone.
  */
 
 :root {
@@ -14,7 +14,7 @@
 }
 
 section {
-  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Overpass', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
   padding: 124px 70px 70px 70px;
@@ -25,7 +25,7 @@ section {
   position: relative;
 }
 
-/* Default top title bar — overridden to position:static by every
+/* Default top title bar, overridden to position:static by every
  * non-default layout in `dark.css` / `sidebar.css`. */
 section h1 {
   position: absolute;
@@ -35,7 +35,9 @@ section h1 {
   background: var(--bg-navy);
   color: var(--accent-cyan);
   margin: 0;
-  padding: 22px 70px;
+  /* Overpass sits high in its line box: nudge the text down so it is
+   * optically centred in the bar (same height, 0.14em shift). */
+  padding: calc(22px + 0.14em) 70px calc(22px - 0.14em);
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -93,7 +95,7 @@ section pre {
 }
 section pre code { background: none; padding: 0; font-weight: 500; }
 
-/* highlight.js token colors (Flatcar palette) — works for any
+/* highlight.js token colors (Flatcar palette), works for any
  * language Marp CLI can detect: ```cpp, ```python, ```rust,
  * ```go, ```yaml, ```json, ```bash, ```typescript, etc. */
 .hljs-keyword,
@@ -144,7 +146,7 @@ section footer  { color: var(--muted); font-size: 13px; bottom: 22px; left: 70px
  *        ![img-md center](assets/logo.png)
  *        ![pin-br img-sm](assets/logo.png)
  *
- *   Both hit the SAME rules — the CSS matches the class or a
+ *   Both hit the SAME rules, the CSS matches the class or a
  *   whitespace-separated word in the img's alt attribute:
  *        .center, img[alt~="center"] { … }
  *
@@ -220,7 +222,7 @@ section footer  { color: var(--muted); font-size: 13px; bottom: 22px; left: 70px
 .img-h-lg, img[alt~="img-h-lg"] { height: 320px; width: auto; }
 
 /* Square (both dimensions equal). object-fit:cover crops the image
- * to the square instead of squashing it — ideal for portraits,
+ * to the square instead of squashing it, ideal for portraits,
  * avatars, or icon tiles. Combine with `border-radius` inline if
  * you want rounded corners. */
 .img-sq-sm, img[alt~="img-sq-sm"] { width: 120px; height: 120px; object-fit: cover; }
@@ -317,7 +319,7 @@ section footer  { color: var(--muted); font-size: 13px; bottom: 22px; left: 70px
  * Two-letter suffix = vertical + horizontal:
  *   t  = top       (60px inset)
  *   mt = middle-top (25% down, between top and middle)
- *   m  = middle     (50% — dead center)
+ *   m  = middle     (50%, dead center)
  *   mb = middle-bottom (75% down, between middle and bottom)
  *   b  = bottom    (60px inset)
  *   l = left,   c = center,   r = right
@@ -352,7 +354,7 @@ section p:has(> img[alt*="pane-"]) {
 
 /* ---------- Callout boxes ----------
  * <div class="callout">
- *   **Note:** Flatcar is immutable — no `apt install`.
+ *   **Note:** Flatcar is immutable, no `apt install`.
  * </div> */
 .callout {
   border-left: 4px solid var(--accent-cyan);
@@ -444,3 +446,6 @@ section p:has(> img[alt*="pane-"]) {
   margin-top: calc(12px * var(--ab-scale));
 }
 .ab-cycle strong { color: var(--bg-navy); }
+
+/* Titles are always bold, whatever a layout sets. */
+section :is(h1, h2, h3, h4, h5, h6) { font-weight: 700 !important; }
