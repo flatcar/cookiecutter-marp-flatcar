@@ -123,7 +123,7 @@ portraits and avatars crop cleanly instead of stretching.
 | `img-sq-xl`  | 400×400px |
 
 ```markdown
-![img-sq-lg pin-mr](assets/photo/individual_photos/jan-bronicki.jpg)
+![img-sq-lg pin-mr](assets/photo/individual_photos/john-doe-example.png)
 ```
 
 For rounded corners on a square, add an inline style:

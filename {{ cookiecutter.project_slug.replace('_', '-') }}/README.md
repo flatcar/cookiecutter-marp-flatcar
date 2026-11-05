@@ -80,4 +80,4 @@ Pushing a tag `v*` triggers the CI workflow to attach `slides.pdf` to a GitHub R
 
 ---
 
-Generated from [cookiecutter-marp-flatcar](https://github.com/John15321/cookiecutter-marp-flatcar) by **{{ cookiecutter.author_full_name }}**.
+Generated from [cookiecutter-marp-flatcar](https://github.com/flatcar/cookiecutter-marp-flatcar) by **{{ cookiecutter.author_full_name }}**.

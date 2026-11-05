@@ -123,7 +123,7 @@ guide](https://cookiecutter.readthedocs.io/en/latest/installation.html).
 ### 2. Generate your talk
 
 ```bash
-cookiecutter gh:John15321/cookiecutter-marp-flatcar
+cookiecutter gh:flatcar/cookiecutter-marp-flatcar
 cd <your-project-slug>
 make setup        # one-time container image build (Podman or Docker)
 make build        # → build/slides.pdf
